@@ -2,16 +2,24 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .slideshow-container {
     position: relative;
-    max-width: 100%;
+    max-width: 90%;
     margin: auto;
+    overflow: hidden;
 }
 
 .slide {
     display: none;
+}
+
+.slide img {
+    width: 100%; /* Adjusts image width to fit the screen */
+    height: auto; /* Maintains aspect ratio */
 }
 
 .fade {
