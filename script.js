@@ -1,29 +1,34 @@
 let slideIndex = 0;
-const totalSlides = 23; // You have 23 slides
+const totalSlides = 23;
 
-// Function to create the slides dynamically
 function createSlides() {
     const container = document.querySelector('.slideshow-container');
     for (let i = 1; i <= totalSlides; i++) {
         const slideDiv = document.createElement('div');
         slideDiv.classList.add('slide', 'fade');
-        slideDiv.innerHTML = `<img src="images/Slide${i}.png" alt="Slide ${i}">`;
+        const img = document.createElement('img');
+        img.src = `images/Slide${i}.PNG`;  // <-- Use ".PNG" not ".png"
+        img.alt = `Slide ${i}`;
+
+        img.onerror = function() {
+            console.error(`Image not found: images/Slide${i}.PNG`);
+        };
+
+        slideDiv.appendChild(img);
         container.appendChild(slideDiv);
     }
 }
 
-// Function to show slides in rotation
 function showSlides() {
     const slides = document.getElementsByClassName("slide");
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Hide all slides
+        slides[i].style.display = "none"; 
     }
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 } // Loop back to first slide
-    slides[slideIndex - 1].style.display = "block"; // Show the current slide
-    setTimeout(showSlides, 2000); // Change slide every 2 seconds
+    if (slideIndex > slides.length) { slideIndex = 1 } 
+    slides[slideIndex - 1].style.display = "block"; 
+    setTimeout(showSlides, 2000); 
 }
 
-// Initialize the slideshow
 createSlides();
 showSlides();
