@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const imgElement = document.createElement("img");
     imgElement.src = `images/Slide1.PNG`; // Start with the first slide
     imgElement.alt = "Slide 1";
-    imgElement.style.width = "200%"; // Adjust as needed
+    imgElement.style.width = "100%"; // Adjust as needed
     container.appendChild(imgElement);
 
     // Function to change slides
