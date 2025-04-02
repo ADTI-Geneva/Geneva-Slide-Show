@@ -7,11 +7,11 @@ function createSlides() {
         const slideDiv = document.createElement('div');
         slideDiv.classList.add('slide', 'fade');
         const img = document.createElement('img');
-        img.src = `images/Slide${i}.PNG`;  // <-- Use ".PNG" not ".png"
+        img.src = `Slide${i}.PNG`;  // Remove "images/" if they are in the root
         img.alt = `Slide ${i}`;
 
         img.onerror = function() {
-            console.error(`Image not found: images/Slide${i}.PNG`);
+            console.error(`Image not found: Slide${i}.PNG`);
         };
 
         slideDiv.appendChild(img);
