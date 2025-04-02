@@ -1,33 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
 }
 
-.slideshow-container {
-    position: relative;
+.slideshow-container img {
     max-width: 90%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.slide {
-    display: none;
-}
-
-.slide img {
-    width: 100%; /* Adjusts image width to fit the screen */
-    height: auto; /* Maintains aspect ratio */
-}
-
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from { opacity: 0.4 }
-    to { opacity: 1 }
+    height: auto;
+    display: block;
 }
