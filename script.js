@@ -1,34 +1,24 @@
-let slideIndex = 0;
-const totalSlides = 23;
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.querySelector(".slideshow-container");
+    
+    // Number of slides
+    const totalSlides = 23;
+    let currentSlide = 0;
 
-function createSlides() {
-    const container = document.querySelector('.slideshow-container');
-    for (let i = 1; i <= totalSlides; i++) {
-        const slideDiv = document.createElement('div');
-        slideDiv.classList.add('slide', 'fade');
-        const img = document.createElement('img');
-        img.src = `Slide${i}.PNG`;  // Remove "images/" if they are in the root
-        img.alt = `Slide ${i}`;
+    // Create image element
+    const imgElement = document.createElement("img");
+    imgElement.src = `images/Slide1.PNG`; // Start with the first slide
+    imgElement.alt = "Slide 1";
+    imgElement.style.width = "100%"; // Adjust as needed
+    container.appendChild(imgElement);
 
-        img.onerror = function() {
-            console.error(`Image not found: Slide${i}.PNG`);
-        };
-
-        slideDiv.appendChild(img);
-        container.appendChild(slideDiv);
+    // Function to change slides
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides; // Loop back to 0 after 23
+        imgElement.src = `images/Slide${currentSlide + 1}.PNG`; // Update image
+        imgElement.alt = `Slide ${currentSlide + 1}`;
     }
-}
 
-function showSlides() {
-    const slides = document.getElementsByClassName("slide");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 } 
-    slides[slideIndex - 1].style.display = "block"; 
-    setTimeout(showSlides, 2000); 
-}
-
-createSlides();
-showSlides();
+    // Change slides every 3 seconds
+    setInterval(nextSlide, 3000);
+});
