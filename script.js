@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         imgElement.alt = `Slide ${currentSlide + 1}`;
     }
 
-    // Change slides every 3 seconds
-    setInterval(nextSlide, 15000);
+    // Change slides every 10 seconds
+    setInterval(nextSlide, 10000);
 });
