@@ -20,5 +20,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Change slides every 10 seconds
-    setInterval(nextSlide, 10000);
+    setInterval(nextSlide, 5000);
 });
