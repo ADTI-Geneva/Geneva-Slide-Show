@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".slideshow-container");
     
     // Number of slides
-    const totalSlides = 23;
+    const totalSlides = 8;
     let currentSlide = 0;
 
     // Create image element
